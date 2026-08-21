@@ -23,17 +23,10 @@ public class Conta {
     public double getSaldo() {
         return saldo;
     }
-
-       
     
-    Conta(){
-        
-    }
-    
-    Conta(int agencia, int numero) {
+    public Conta(int agencia, int numero) {
         this.agencia = agencia;
         this.numero = numero;
-        
     }
     
     public Conta(int agencia, int numero, double saldo){
@@ -44,26 +37,25 @@ public class Conta {
     
     public void creditar(double valor){
         if(valor > 0){
-            saldo = saldo + valor;
+            this.saldo += valor;
             //System.out.println("Crédito Realizado!");
         }else{
             System.out.println("Valor Inválido!");
         }
     }
     
-    public boolean debitar(double valor){
-        if(valor > 0 && valor <= saldo){
-        saldo = saldo - valor;    
-        //System.out.println("Débito Realizado!");
-        return true;
+    public void debitar(double valor){
+        if(valor > 0 && valor <= getSaldo()){
+            this.saldo -= valor;    
+            // System.out.println("Débito Realizado!");
         }else{
             System.out.println("Saldo Insuficiente!");
-        return false;    
         }
     }
     
     public void transferir(double valor, Conta destino){
-        if(debitar(valor)){
+        if(valor > 0 && destino != null && valor <=  getSaldo()){
+            this.debitar(valor);
             destino.creditar(valor);
             //System.out.println("Transferência Realizada!");
         }else{
