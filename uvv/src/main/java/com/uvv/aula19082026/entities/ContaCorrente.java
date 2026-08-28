@@ -10,10 +10,17 @@ public class ContaCorrente extends Conta{
 
     public void atualizarLimite(double limite){
         if(limite>=0){
+            double diferenca = limite - this.limite;
+
+            if (diferenca > 0){
+                creditar(diferenca);
+            }else if (diferenca < 0){
+                debitar(diferenca);
+            }
             this.limite = limite;
-            
+            }
         }
-    }
+    
 
     @Override
     public String toString(){
