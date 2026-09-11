@@ -1,0 +1,6 @@
+com/entities/FormaPagamento.class
+com/entities/Checkout.class
+com/application/Main.class
+com/entities/PagamentoPix.class
+com/entities/PagamentoCartao.class
+com/entities/PagamentoBoleto.class
