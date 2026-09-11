@@ -1,4 +1,5 @@
-package com.application;
+package com.uvv.atv4.application;
+
 
 import com.entities.*;
 
@@ -7,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         
         Checkout checkout = new Checkout();
-        
+    
         System.out.println("\n[TESTE 1: PIX]");
         FormaPagamento pix = new PagamentoPix(100.0);
         checkout.finalizarCompra(pix);
@@ -32,4 +33,4 @@ public class Main {
         FormaPagamento boletoAlt = new PagamentoBoleto(valor);
         checkout.finalizarCompra(boletoAlt);
     }
-}
+} 
